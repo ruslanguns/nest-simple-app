@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=nest
+      - MONGO_INITDB_ROOT_PASSWORD=nest123
+      - MONGODB_DATABASE=nest-simple-app
+    ports:
+      - 27017:27017
