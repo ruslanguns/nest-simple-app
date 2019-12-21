@@ -34,4 +34,13 @@ export class ConfigService extends ConfigManager {
         };
     }
 
+    // Compatible with forRootAsync() config method
+    public createMongooseOptions() {
+        return {
+            uri: `mongodb://${this.get<string>('DATABASE_USERNAME')}:${this.get<string>('DATABASE_PASSWORD')}@${this.get<string>('DATABASE_HOST')}:${this.get<string>('DATABASE_PORT')}/${this.get<string>('DATABASE_NAME')}`,
+            authSource: 'admin',
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        };
+    }
 }

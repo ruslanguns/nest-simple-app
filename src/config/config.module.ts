@@ -2,7 +2,6 @@ import { Module, Global } from '@nestjs/common';
 import { ConfigService } from './config.service';
 import { ConfigManagerModule } from '@nestjsplus/config';
 import { join } from 'path';
-import { ConstantsService } from './constants.service';
 
 @Global()
 @Module({
@@ -11,7 +10,7 @@ import { ConstantsService } from './constants.service';
       useFile: join(__dirname, '../../config/development.env'),
     }),
   ],
-  providers: [ConfigService, ConstantsService],
-  exports: [ConfigService, ConstantsService],
+  providers: [ConfigService],
+  exports: [ConfigService],
 })
 export class ConfigModule { }

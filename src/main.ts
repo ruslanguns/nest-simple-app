@@ -10,7 +10,7 @@ async function bootstrap() {
 
   // TODO: #1 Load ENV from ConfigService: DONE!!!
   const configService = app.get(ConfigService);
-  logger.log(configService.get<string>('MY_VARIABLE') + '...from main.ts');
+  logger.log(configService.get<string>('MY_VARIABLE'));
 
   await app.listen(3000);
 }
